@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing</title>
+  </head>
+  <body>
+    <div class="color-options">
+      <input type="color" id="color" />
+      <div
+        class="color-option"
+        style="background-color: #ff0000"
+        data-color="#3498db"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #ff8c00"
+        data-color="#34495e"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #ffff00"
+        data-color="#27ae60"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #008000"
+        data-color="#8e44ad"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #0000ff"
+        data-color="#f1c40f"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #000080"
+        data-color="#e74c3c"
+      ></div>
+      <div
+        class="color-option"
+        style="background-color: #800080"
+        data-color="#95a5a6"
+      ></div>
+    </div>
+
+    <canvas class="canvas-container"></canvas>
+    <!-- 캔버스 -->
+
+    <div class="btns">
+      <input
+        id="line-width"
+        type="range"
+        min="1"
+        max="10"
+        value="5"
+        step="0.1"
+      />
+
+      <button id="fill-btn">Fill</button>
+      <button id="destroy-btn">Destroy</button>
+      <button id="erase-btn">Erase</button>
+      <label for="file">
+        Add photo
+        <input type="file" accept="image/*" id="file" />
+      </label>
+      <input type="text" placeholder="Text" id="text" />
+      <button id="save">Save image</button>
+      <div class="snow-container"></div>
+      <!-- 눈송이 -->
+    </div>
+    <script src="./snowflake.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
