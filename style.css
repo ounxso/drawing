@@ -1,0 +1,117 @@
+@import 'reset.css';
+
+body {
+  display: flex;
+  gap: 50px; /* 좌우 요소 간 간격 */
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b2f;
+  padding: 20px;
+  height: 100vh;
+  margin-left: 120px;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: 0;
+  color: white;
+  font-size: 10px;
+  user-select: none; /* 드래그 방지 */
+  pointer-events: none; /* 클릭 방지 */
+  animation: snowfall linear infinite;
+}
+
+canvas {
+  width: 700px;
+  height: 700px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.canvas-container {
+  border: 10px solid transparent;
+  border-image: repeating-linear-gradient(
+      45deg,
+      red,
+      red 5px,
+      white 5px,
+      white 10px,
+      green 10px,
+      green 15px
+    )
+    1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.color-option {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer; /* 우리가 클릭할 수 있는 것처럼 보인다. */
+  border: 5px solid white;
+  transition: transform ease-in-out 0.1s;
+}
+
+.color-option:hover {
+  transform: scale(1.3);
+}
+
+input#color {
+  background-color: white;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+button,
+label {
+  all: unset; /* css 속성 전부 제거하라는 뜻, 기본적으로 제공되는 거를 없앤다. */
+  padding: 10px 0px;
+  text-align: center;
+  background-color: #d4af37;
+  color: #1b1b2f;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: opacity linear 0.1s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+input#text {
+  all: unset;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 0px;
+  font-weight: 500;
+  background-color: white;
+}
+
+input#file {
+  display: none;
+}
